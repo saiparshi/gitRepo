@@ -1,68 +1,80 @@
 Arguments: 
-  /Users/sparshi/.nvm/versions/node/v8.9.4/bin/node /Users/sparshi/.nvm/versions/node/v8.9.4/lib/node_modules/yarn/bin/yarn.js install
+  C:\Program Files\nodejs\node.exe C:\Users\Sagarica\git\testReactApp\node_modules\yarn\bin\yarn.js add -D webpack-cli
 
 PATH: 
-  /usr/local/Frameworks/Python.framework/Versions/3.7/bin:/Users/sparshi/.nvm/versions/node/v8.9.4/bin:/Users/sparshi/.jenv/shims:/Users/sparshi/.jenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/usr/local/Cellar/gradle/5.5.1/bin
+  C:\Users\Sagarica\git\testReactApp\node_modules\.bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Lenovo\FusionEngine;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Common Files\lenovo\easyplussdk\bin;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_91\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs;C:\Users\Sagarica\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java;C:\Program Files\Java\jdk1.8.0_91\bin;C:\Users\Sagarica\AppData\Roaming\npm
 
 Yarn version: 
-  1.17.3
+  1.21.1
 
 Node version: 
-  8.9.4
+  12.14.1
 
 Platform: 
-  darwin x64
+  win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/eslint-loader: ETIMEDOUT
-      at Timeout._onTimeout (/Users/sparshi/.nvm/versions/node/v8.9.4/lib/node_modules/yarn/lib/cli.js:141124:19)
-      at ontimeout (timers.js:475:11)
-      at tryOnTimeout (timers.js:310:5)
-      at Timer.listOnTimeout (timers.js:270:5)
+  Error: https://registry.yarnpkg.com/core-js/-/core-js-2.6.11.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Users\Sagarica\git\testReactApp\node_modules\yarn\lib\cli.js:141292:19)
+      at Object.onceWrapper (events.js:312:28)
+      at ClientRequest.emit (events.js:223:5)
+      at TLSSocket.emitRequestTimeout (_http_client.js:690:9)
+      at Object.onceWrapper (events.js:312:28)
+      at TLSSocket.emit (events.js:223:5)
+      at TLSSocket.Socket._onTimeout (net.js:474:8)
+      at listOnTimeout (internal/timers.js:531:17)
+      at processTimers (internal/timers.js:475:7)
 
 npm manifest: 
   {
     "name": "myapp",
     "version": "0.1.0",
     "private": true,
+    "engines": {
+      "node": "12.14.1"
+    },
     "dependencies": {
       "axios": "^0.19.0",
       "babel": "^6.23.0",
       "babel-cli": "^6.26.0",
       "babel-loader": "^7.1.2",
       "babel-plugin-transform-runtime": "^6.23.0",
-      "babel-polyfill": "6.26.0",
+      "babel-preset-env": "^1.7.0",
       "babel-preset-es2015": "^6.24.1",
       "babel-preset-react": "^6.24.1",
       "babel-runtime": "^6.26.0",
+      "css-loader": "^3.4.0",
+      "eslint": "^6.8.0",
+      "eslint-loader": "^3.0.3",
+      "eslint-plugin-json": "^2.0.1",
+      "eslint-plugin-react": "^7.17.0",
       "express": "^4.17.1",
-      "eslint-loader": "^1.9.0",
-      "eslint-plugin-json": "^1.2.0",
-      "eslint-plugin-react": "^7.6.1",
-      "extract-text-webpack-plugin": "^3.0.2",
+      "extract-text-webpack-plugin": "^4.0.0-beta.0",
+      "history": "^4.7.2",
       "html-webpack-plugin": "^3.2.0",
       "react": "^16.12.0",
       "react-dom": "^16.12.0",
       "react-router-dom": "^5.1.2",
-      "react-scripts": "0.9.x",
-      "require": "^2.4.20",
-      "style-loader": "^0.20.1",
-      "url-loader": "^0.6.2",
-      "webpack": "^3.10.0",
-      "webpack-dev": "^1.1.0",
-      "webpack-dev-server": "^2.11.1"
+      "style-loader": "^1.1.2",
+      "uglifyjs-webpack-plugin": "^2.2.0",
+      "url-loader": "^3.0.0",
+      "webpack": "^4.41.4",
+      "webpack-cli": "^3.3.10",
+      "yarn": "^1.21.1"
     },
     "devDependencies": {},
     "scripts": {
-      "build": "babel src -d lib; webpack",
-      "start": "webpack-dev-server --open --config webpack.config.js --hot",
-      "server": "node src/server/server.js"
+      "build": "webpack --mode development",
+      "start": "node src/server/index.js",
+      "dev": "webpack --mode development && node src/server/index.js",
+      "server": "node src/server/index.js"
     },
     "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
     "main": "index.js",
     "keywords": [],
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    "directConnect": true
   }
 
 yarn manifest: 
